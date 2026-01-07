@@ -23,10 +23,10 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "4.0.0"
+          ruby-version: "3.4.1"
           bundler-cache: true
       - name: Install dependencies
-        run: bundle install --path vendor/bundle
+        run: bundle install vendor/bundle
       - name: Build site
         run: bundle exec jekyll build --baseurl "" --destination _site
       - name: Upload artifact
