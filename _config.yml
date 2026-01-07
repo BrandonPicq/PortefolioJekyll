@@ -1,8 +1,8 @@
 title: "Brandon Picq"
 email: "brandon.picq@gmail.com"
 description: "Portfolio professionnel de Brandon PICQ — Présentation, projets et contact"
-baseurl: ""
-url: ""
+baseurl: "/portfolioJekyll"
+url: "https://brandonpicq.github.io"
 
 theme: minima
 plugins:
