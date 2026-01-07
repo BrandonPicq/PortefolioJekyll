@@ -5,8 +5,8 @@ technologies:
   - HTML
   - CSS
   - Tailwind
-repo: "https://github.com/BrandonPicq/html_css"
-demo: "https://brandonpicq.github.io/html_css/"
+repo: "https://github.com/BrandonPicq/Tailwind"
+demo: "https://brandonpicq.github.io/Tailwind/"
 excerpt: "Petit projet qui avait pour but de tester ma capacitié à adapter un design à un changement de technologie"
 ---
 
