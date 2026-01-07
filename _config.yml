@@ -23,4 +23,4 @@ defaults:
       type: "projects"
     values:
       layout: "project"
-      css: /assets/project.css
+      css: "/assets/project.css"
