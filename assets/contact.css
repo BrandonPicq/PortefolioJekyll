@@ -1,0 +1,41 @@
+.contact .contact-hero {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.contact .contact-hero h1 {
+  margin-top: 0;
+}
+
+.contact .contact-content {
+  max-width: 700px;
+}
+
+.contact form {
+  margin-top: 2rem;
+}
+
+.contact label {
+  display: block;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact input[type="submit"] {
+  margin-top: 1.5rem;
+}

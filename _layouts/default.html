@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    {% include head.html %}
+  </head>
+  <body class="{{ page.layout }} {{ page.slug | default: page.url | slugify }}">
+    <header>
+      <nav>
+        <a href="{{ '/' | relative_url }}">Accueil</a> |
+        <a href="{{ '/about/' | relative_url }}">À propos</a> |
+        <a href="{{ '/projects/' | relative_url }}">Projets</a> |
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      </nav>
+    </header>
+
+    <main>{{ content }}</main>
+
+    <footer>
+      <p>&copy; {{ site.title }} — {{ site.time | date: "%Y" }}</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<section class="contact-hero">
+  <h1>{{ page.title }}</h1>
+</section>
+
+<section class="contact-content">
+  {{ content }}
+
+  <form
+    action="mailto:you@example.com"
+    method="post"
+    enctype="text/plain"
+    class="contact-form"
+  >
+    <label>Nom<br /><input type="text" name="Nom" /></label><br />
+    <label>Email<br /><input type="email" name="Email" /></label><br />
+    <label>Message<br /><textarea name="Message" rows="6"></textarea></label
+    ><br />
+    <input type="submit" value="Envoyer (ouvre le client mail)" />
+  </form>
+
+  <p class="note">
+    Remarque: ce formulaire est statique — il ouvre votre client de messagerie.
+  </p>
+</section>

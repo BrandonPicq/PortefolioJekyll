@@ -1,0 +1,26 @@
+title: "Brandon Picq"
+email: "brandon.picq@gmail.com"
+description: "Portfolio professionnel de Brandon PICQ — Présentation, projets et contact"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+theme: minima
+plugins:
+  - jekyll-seo-tag
+
+collections:
+  projects:
+    output: true
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+      css: /assets/project.css

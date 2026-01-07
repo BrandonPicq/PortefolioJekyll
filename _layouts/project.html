@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<article class="project-detail">
+  <h1>{{ page.title }}</h1>
+
+  <div class="project-meta">
+    {% if page.date %}
+    <span class="date">{{ page.date | date: "%d %B %Y" }}</span>
+    {% endif %}
+  </div>
+
+  {% if page.technologies %}
+  <div class="technologies">
+    <strong>Technologies :</strong>
+    <ul>
+      {% for tech in page.technologies %}
+      <li>{{ tech }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <div class="project-content">{{ content }}</div>
+
+  <div class="project-links">
+    {% if page.repo %}
+    <a href="{{ page.repo }}" target="_blank">Code source</a>
+    {% endif %} {% if page.demo %}
+    <a href="{{ page.demo }}" target="_blank">Démo</a>
+    {% endif %}
+  </div>
+
+  <div class="project-nav">
+    <a href="{{ '/projects/' | relative_url }}">← Retour aux projets</a>
+  </div>
+</article>

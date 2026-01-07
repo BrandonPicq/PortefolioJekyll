@@ -1,0 +1,97 @@
+.projects-hero {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.projects-hero h1 {
+  margin-top: 0;
+}
+
+.projects-content {
+  line-height: 1.8;
+}
+
+.projects-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.projects-list li {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.projects-list li:last-child {
+  border-bottom: none;
+}
+
+.projects-list h2 {
+  margin-top: 0;
+}
+
+.projects-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.projects-list a:hover {
+  text-decoration: underline;
+}
+
+.projects-list p {
+  margin: 0.5rem 0;
+}
+
+.project-detail article {
+  padding: 2rem 0;
+}
+
+.project-detail h1 {
+  margin-top: 0;
+}
+
+.project-detail .project-meta {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 1rem 0;
+}
+
+.project-detail .technologies {
+  margin: 1.5rem 0;
+}
+
+.project-detail .technologies ul {
+  padding-left: 1.5rem;
+}
+
+.project-detail .project-links {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.project-detail .project-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.project-detail .project-links a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.project-detail .project-nav {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.project-detail .project-nav a {
+  color: var(--accent);
+}
