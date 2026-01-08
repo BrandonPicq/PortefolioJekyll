@@ -6,10 +6,17 @@
   <body class="{{ page.layout }} {{ page.slug | default: page.url | slugify }}">
     <header>
       <nav>
-        <a href="{{ '/' | relative_url }}">Accueil</a> |
-        <a href="{{ '/about/' | relative_url }}">À propos</a> |
-        <a href="{{ '/projects/' | relative_url }}">Projets</a> |
-        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        <button class="burger-menu" aria-label="Menu" aria-expanded="false">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+        <div class="nav-links">
+          <a href="{{ '/' | relative_url }}">Accueil</a>
+          <a href="{{ '/about/' | relative_url }}">À propos</a>
+          <a href="{{ '/projects/' | relative_url }}">Projets</a>
+          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        </div>
       </nav>
     </header>
 
@@ -18,5 +25,17 @@
     <footer>
       <p>&copy; {{ site.title }} — {{ site.time | date: "%Y" }}</p>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const burger = document.querySelector(".burger-menu");
+        const navLinks = document.querySelector(".nav-links");
+
+        burger.addEventListener("click", function () {
+          const isOpen = navLinks.classList.toggle("open");
+          burger.classList.toggle("open");
+          burger.setAttribute("aria-expanded", isOpen);
+        });
+      });
+    </script>
   </body>
 </html>

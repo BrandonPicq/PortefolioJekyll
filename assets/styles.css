@@ -38,6 +38,83 @@ nav {
   margin: 0 auto;
   padding: 0 1rem;
   text-align: center;
+  position: relative;
+}
+
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 100;
+}
+
+.burger-line {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--accent);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger-menu.open .burger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.open .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.open .burger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.nav-links {
+  display: inline;
+}
+
+.nav-links a {
+  margin: 0 0.75rem;
+}
+
+@media (max-width: 500px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .burger-menu {
+    display: block;
+    position: static;
+    margin-bottom: 1rem;
+    transform: none;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 1rem;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
 }
 
 nav a {
@@ -45,11 +122,52 @@ nav a {
   text-decoration: none;
   margin: 0 0.75rem;
   font-size: 0.95rem;
-  transition: color 0.2s;
+  position: relative;
+  display: inline-block;
+  padding: 0.15rem 0;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background: var(--accent);
+  transform-origin: center;
+  transform: scaleX(0);
+  opacity: 0.9;
+  transition: transform 180ms ease;
+  border-radius: 2px;
 }
 
 nav a:hover {
   color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+nav a:hover::after,
+nav a:focus::after,
+nav a[aria-current]::after {
+  transform: scaleX(1);
+}
+
+nav a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  nav a,
+  nav a::after {
+    transition: none !important;
+  }
+  nav a:hover {
+    transform: none !important;
+  }
 }
 
 main {
