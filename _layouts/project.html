@@ -11,16 +11,6 @@ layout: default
     {% endif %}
   </div>
 
-  {% if page.technologies %}
-  <div class="technologies">
-    <strong>Technologies :</strong>
-    <ul>
-      {% for tech in page.technologies %}
-      <li>{{ tech }}</li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
 
   <div class="project-content">{{ content }}</div>
 
