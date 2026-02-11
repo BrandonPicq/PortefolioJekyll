@@ -93,10 +93,11 @@ Ajouter les touches finales et interactions engageantes.
 
 Optimiser pour production et déployer.
 
-| Étape   | Titre                  | Description                                               | Tu apprends                             |
-| ------- | ---------------------- | --------------------------------------------------------- | --------------------------------------- |
-| **5.1** | SEO & Meta tags        | React Helmet, Open Graph, sitemap.xml                     | React Helmet, SEO for SPA, Open Graph   |
-| **5.2** | Performance            | Lazy loading composants, optimisation images (WebP)       | React.lazy(), Suspense, images modernes |
+| Étape   | Titre           | Description                                         | Tu apprends                             |
+| ------- | --------------- | --------------------------------------------------- | --------------------------------------- |
+| **5.1** | SEO & Meta tags | React Helmet, Open Graph, sitemap.xml               | React Helmet, SEO for SPA, Open Graph   |
+| **5.2** | Performance     | Lazy loading composants, optimisation images (WebP) | React.lazy(), Suspense, images modernes |
+
 ---
 
 ## 📊 Résumé
@@ -153,18 +154,21 @@ Prêt ? 🎯
 **On code organique, pas en cascade.**
 
 Chaque étape doit:
+
 - ✅ Être **vraiment atomique** (une seule chose)
 - ✅ Être **testable immédiatement** (tu vois le résultat dans le navigateur)
 - ✅ Ne pas préparer d'infrastructure invisible
 - ✅ S'avancer que quand c'est **fonctionnel et vérifiable**
 
 **Pas de préparation invisible** comme:
+
 - ❌ Installer des dépendances qui ne seront pas utilisées tout de suite
 - ❌ Créer une structure de dossiers complète d'avance
 - ❌ Écrire du code qu'on ne peut pas tester
 - ❌ Commencer du styling avant que l'élément existe
 
 **Le rythme:**
+
 1. Créer quelque chose de petit
 2. Vérifier que ça marche (voir dans le navigateur)
 3. Commit
@@ -178,11 +182,11 @@ Chaque étape doit:
 
 Les toutes premières briques du projet.
 
-| Étape   | Titre                              | Description                                                    | Résultat visible                        |
-| ------- | ---------------------------------- | -------------------------------------------------------------- | --------------------------------------- |
-| **0.1** | Init Vite + React + TS             | `npm create vite@latest` → React template                      | Page par défaut Vite dans le navigateur |
-| **0.2** | Vérifier que ça tourne             | `npm install` et `npm run dev` → tu vois la page               | ✅ App tourne sur localhost:5173        |
-| **0.3** | Premier commit                     | `git add .` et `git commit`                                    | 📦 Checkpoint sauvegardé                |
+| Étape   | Titre                  | Description                                      | Résultat visible                        |
+| ------- | ---------------------- | ------------------------------------------------ | --------------------------------------- |
+| **0.1** | Init Vite + React + TS | `npm create vite@latest` → React template        | Page par défaut Vite dans le navigateur |
+| **0.2** | Vérifier que ça tourne | `npm install` et `npm run dev` → tu vois la page | ✅ App tourne sur localhost:5173        |
+| **0.3** | Premier commit         | `git add .` et `git commit`                      | 📦 Checkpoint sauvegardé                |
 
 ---
 
@@ -190,14 +194,14 @@ Les toutes premières briques du projet.
 
 Construire le squelette avec routing et un premier layout.
 
-| Étape   | Titre                       | Description                                                              | Résultat visible                                     |
-| ------- | --------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------- |
-| **1.1** | Installer React Router      | `npm install react-router-dom`                                           | Rien de visible encore (setup)                      |
-| **1.2** | Créer 3 pages vides         | Home.tsx, About.tsx, Projects.tsx (juste du texte "Page X")              | Tu vois "Page Home" quand tu cliques sur les routes |
-| **1.3** | Routing basique             | Créer App.tsx avec routes qui fonctionnent                               | Navigation entre pages (URLs changent)              |
-| **1.4** | Composant Layout + Navbar   | Navbar en haut (avec liens), Outlet au milieu                            | Navbar visible sur toutes les pages                 |
-| **1.5** | Footer simple               | Footer en bas de la page                                                 | Footer visible en bas                               |
-| **1.6** | Commit checkpoint           | `git add .` et `git commit`                                              | 📦 SPA de base fonctionnelle                        |
+| Étape   | Titre                     | Description                                                 | Résultat visible                                    |
+| ------- | ------------------------- | ----------------------------------------------------------- | --------------------------------------------------- |
+| **1.1** | Installer React Router    | `npm install react-router-dom`                              | Rien de visible encore (setup)                      |
+| **1.2** | Créer 3 pages vides       | Home.tsx, About.tsx, Projects.tsx (juste du texte "Page X") | Tu vois "Page Home" quand tu cliques sur les routes |
+| **1.3** | Routing basique           | Créer App.tsx avec routes qui fonctionnent                  | Navigation entre pages (URLs changent)              |
+| **1.4** | Composant Layout + Navbar | Navbar en haut (avec liens), Outlet au milieu               | Navbar visible sur toutes les pages                 |
+| **1.5** | Footer simple             | Footer en bas de la page                                    | Footer visible en bas                               |
+| **1.6** | Commit checkpoint         | `git add .` et `git commit`                                 | 📦 SPA de base fonctionnelle                        |
 
 ---
 
@@ -205,15 +209,15 @@ Construire le squelette avec routing et un premier layout.
 
 Ajouter du style progressivement, seulement quand on l'utilise.
 
-| Étape   | Titre                      | Description                                                           | Résultat visible                        |
-| ------- | -------------------------- | --------------------------------------------------------------------- | --------------------------------------- |
-| **2.1** | Installer Tailwind CSS     | `npm install -D tailwindcss postcss autoprefixer`                    | Rien encore (setup)                     |
-| **2.2** | Configurer Tailwind        | `tailwind.config.ts`, `postcss.config.js`, importer dans main.css    | Rien encore (setup)                     |
-| **2.3** | Styler la Navbar           | Ajouter des classes Tailwind à la Navbar (flex, bg, padding, etc.)   | Navbar styled et agréable               |
-| **2.4** | Styler le Footer           | Ajouter des classes Tailwind au Footer                                | Footer styled                           |
-| **2.5** | Layout global + spacing    | Conteneurs, padding, font de base pour tout le site                   | Site cohérent et aéré                   |
-| **2.6** | Couleurs custom Tailwind    | Définir palette primaire/secondaire/accent dans config                | Application des couleurs au site        |
-| **2.7** | Commit checkpoint          | `git add .` et `git commit`                                            | 📦 Design basique en place              |
+| Étape   | Titre                    | Description                                                        | Résultat visible                 |
+| ------- | ------------------------ | ------------------------------------------------------------------ | -------------------------------- |
+| **2.1** | Installer Tailwind CSS   | `npm install -D tailwindcss postcss autoprefixer`                  | Rien encore (setup)              |
+| **2.2** | Configurer Tailwind      | `tailwind.config.ts`, `postcss.config.js`, importer dans main.css  | Rien encore (setup)              |
+| **2.3** | Styler la Navbar         | Ajouter des classes Tailwind à la Navbar (flex, bg, padding, etc.) | Navbar styled et agréable        |
+| **2.4** | Styler le Footer         | Ajouter des classes Tailwind au Footer                             | Footer styled                    |
+| **2.5** | Layout global + spacing  | Conteneurs, padding, font de base pour tout le site                | Site cohérent et aéré            |
+| **2.6** | Couleurs custom Tailwind | Définir palette primaire/secondaire/accent dans config             | Application des couleurs au site |
+| **2.7** | Commit checkpoint        | `git add .` et `git commit`                                        | 📦 Design basique en place       |
 
 ---
 
@@ -221,17 +225,17 @@ Ajouter du style progressivement, seulement quand on l'utilise.
 
 Construire chaque page au fur et à mesure, une par une.
 
-| Étape   | Titre                           | Description                                                          | Résultat visible                      |
-| ------- | ------------------------------- | -------------------------------------------------------------------- | ------------------------------------- |
-| **3.1** | Hero section (Accueil)          | Titre, sous-titre, boutons CTA. Du texte et boutons simple           | Belle hero section sur l'accueil      |
-| **3.2** | Section skills (Accueil)        | Liste des technos (hard-codée d'abord)                               | Grid de badges/chips avec les techs   |
-| **3.3** | Page À propos - Texte           | Bio simple, infos basiques                                           | Page about lisible                    |
-| **3.4** | Page À propos - Timeline        | Timeline du parcours (Epitech, expériences)                          | Timeline visuelle                     |
-| **3.5** | Page Projets - Liste simple     | 3-4 projets hard-codés en tableau/grid                               | Liste des projets visible            |
-| **3.6** | Carte projet (Card)             | Composant Card réutilisable (titre, desc, techs, liens)              | Cards bien présentées                 |
-| **3.7** | Page projet détaillé            | Route `/projects/:id` → affiche un projet en détail                  | Clic sur projet = page détail         |
-| **3.8** | Page Contact - Formulaire       | Form simple (nom, email, message) → log en console pour tester       | Formulaire fonctionnel (test en console) |
-| **3.9** | Commit checkpoint               | `git add .` et `git commit`                                           | 📦 Portfolio complet mais sans animations |
+| Étape   | Titre                       | Description                                                    | Résultat visible                          |
+| ------- | --------------------------- | -------------------------------------------------------------- | ----------------------------------------- |
+| **3.1** | Hero section (Accueil)      | Titre, sous-titre, boutons CTA. Du texte et boutons simple     | Belle hero section sur l'accueil          |
+| **3.2** | Section skills (Accueil)    | Liste des technos (hard-codée d'abord)                         | Grid de badges/chips avec les techs       |
+| **3.3** | Page À propos - Texte       | Bio simple, infos basiques                                     | Page about lisible                        |
+| **3.4** | Page À propos - Timeline    | Timeline du parcours (Epitech, expériences)                    | Timeline visuelle                         |
+| **3.5** | Page Projets - Liste simple | 3-4 projets hard-codés en tableau/grid                         | Liste des projets visible                 |
+| **3.6** | Carte projet (Card)         | Composant Card réutilisable (titre, desc, techs, liens)        | Cards bien présentées                     |
+| **3.7** | Page projet détaillé        | Route `/projects/:id` → affiche un projet en détail            | Clic sur projet = page détail             |
+| **3.8** | Page Contact - Formulaire   | Form simple (nom, email, message) → log en console pour tester | Formulaire fonctionnel (test en console)  |
+| **3.9** | Commit checkpoint           | `git add .` et `git commit`                                    | 📦 Portfolio complet mais sans animations |
 
 ---
 
@@ -239,15 +243,15 @@ Construire chaque page au fur et à mesure, une par une.
 
 Ajouter du "wow" progressivement, seulement si ça teste bien.
 
-| Étape   | Titre                      | Description                                                              | Résultat visible                          |
-| ------- | -------------------------- | ------------------------------------------------------------------------ | ----------------------------------------- |
-| **4.1** | Installer Framer Motion    | `npm install framer-motion`                                              | Rien encore (setup)                       |
-| **4.2** | Animation hero au load     | Hero title fade + slide in au chargement                                 | Animation lisse au load                   |
-| **4.3** | Animation skills au scroll | Les skills apparaissent au scroll (Intersection Observer ou Framer)       | Cards qui apparaissent au scroll           |
-| **4.4** | Transition entre pages     | Fade out/in quand tu changes de page                                     | Pages qui transitionnent fluidement        |
-| **4.5** | Hover effects              | Cards, boutons, liens avec hover animations                              | Feedback interactif en survol              |
-| **4.6** | Easter egg optionnel        | Quelque chose de fun (Konami code, click secret, etc.)                   | Truc cool caché découvrable               |
-| **4.7** | Commit checkpoint          | `git add .` et `git commit`                                              | 📦 Portfolio vivant et animé              |
+| Étape   | Titre                      | Description                                                         | Résultat visible                    |
+| ------- | -------------------------- | ------------------------------------------------------------------- | ----------------------------------- |
+| **4.1** | Installer Framer Motion    | `npm install framer-motion`                                         | Rien encore (setup)                 |
+| **4.2** | Animation hero au load     | Hero title fade + slide in au chargement                            | Animation lisse au load             |
+| **4.3** | Animation skills au scroll | Les skills apparaissent au scroll (Intersection Observer ou Framer) | Cards qui apparaissent au scroll    |
+| **4.4** | Transition entre pages     | Fade out/in quand tu changes de page                                | Pages qui transitionnent fluidement |
+| **4.5** | Hover effects              | Cards, boutons, liens avec hover animations                         | Feedback interactif en survol       |
+| **4.6** | Easter egg optionnel       | Quelque chose de fun (Konami code, click secret, etc.)              | Truc cool caché découvrable         |
+| **4.7** | Commit checkpoint          | `git add .` et `git commit`                                         | 📦 Portfolio vivant et animé        |
 
 ---
 
@@ -255,12 +259,12 @@ Ajouter du "wow" progressivement, seulement si ça teste bien.
 
 Optimiser avant le déploiement final.
 
-| Étape   | Titre                      | Description                                                     | Résultat visible                 |
-| ------- | -------------------------- | --------------------------------------------------------------- | -------------------------------- |
-| **5.1** | Installer React Helmet     | `npm install react-helmet-async`                               | Rien encore (setup)              |
-| **5.2** | SEO - Meta tags            | Title, description, Open Graph sur chaque page                  | Meta tags dans l'inspecteur      |
-| **5.3** | Performance - Image lazy   | Images optimisées, lazy loading                                 | Chargement plus rapide           |
-| **5.4** | Accessibility - ARIA       | ARIA labels, focus keyboard, alt text                           | Plus accessible aux lecteurs     |
-| **5.5** | Setup GitHub Actions       | Créer workflow `.github/workflows/deploy.yml`                   | Déploiement auto sur GitHub      |
-| **5.6** | Deploy en production       | `git push` → site live sur GitHub Pages ✨                     | 🚀 Portfolio en ligne !           |
-| **5.7** | Commit final               | `git add .` et `git commit`                                     | 📦 Livré !                       |
+| Étape   | Titre                    | Description                                    | Résultat visible             |
+| ------- | ------------------------ | ---------------------------------------------- | ---------------------------- |
+| **5.1** | Installer React Helmet   | `npm install react-helmet-async`               | Rien encore (setup)          |
+| **5.2** | SEO - Meta tags          | Title, description, Open Graph sur chaque page | Meta tags dans l'inspecteur  |
+| **5.3** | Performance - Image lazy | Images optimisées, lazy loading                | Chargement plus rapide       |
+| **5.4** | Accessibility - ARIA     | ARIA labels, focus keyboard, alt text          | Plus accessible aux lecteurs |
+| **5.5** | Setup GitHub Actions     | Créer workflow `.github/workflows/deploy.yml`  | Déploiement auto sur GitHub  |
+| **5.6** | Deploy en production     | `git push` → site live sur GitHub Pages ✨     | 🚀 Portfolio en ligne !      |
+| **5.7** | Commit final             | `git add .` et `git commit`                    | 📦 Livré !                   |
