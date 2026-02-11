@@ -1,121 +1,73 @@
-# 🚀 Portfolio Moderne — React + Vite + TypeScript
+# React + TypeScript + Vite
 
-> **En construction** — Refactorisation du portfolio de Jekyll vers une application React moderne.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Un portfolio professionnel moderne, interactif et performant. Construit avec React, Vite, TypeScript et Tailwind CSS. Déployé sur GitHub Pages.
+Currently, two official plugins are available:
 
-## 📋 À propos du projet
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Ce projet est à la fois un **portfolio personnel** ET une **vitrine de compétences techniques**. L'objectif est d'apprendre en faisant, en construisant une application web moderne qui démontre:
+## React Compiler
 
-- ✅ Maîtrise de **React** (hooks, state, routing)
-- ✅ **TypeScript** et types stricts
-- ✅ **Tailwind CSS** et responsive design
-- ✅ **Animations fluides** avec Framer Motion
-- ✅ **Architecture propre** et maintenable
-- ✅ **CI/CD** avec GitHub Actions
-- ✅ **SEO et accessibilité** web
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🛠️ Stack technologique
+## Expanding the ESLint configuration
 
-```
-Frontend:
-  - React 18+ avec TypeScript
-  - Vite (bundler ultra-rapide)
-  - Tailwind CSS (utility-first)
-  - Framer Motion (animations)
-  - React Router (SPA routing)
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-Backend/Services:
-  - EmailJS ou Formspree (formulaires sans serveur)
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-Deployment:
-  - GitHub Pages (statique)
-  - GitHub Actions (CI/CD)
-```
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-## 📁 Structure du projet (future)
-
-```
-portfolio-react/
-├── src/
-│   ├── components/        # Composants réutilisables
-│   │   ├── Layout.tsx
-│   │   ├── Navbar.tsx
-│   │   ├── Footer.tsx
-│   │   └── ui/           # Button, Card, Badge, etc.
-│   ├── pages/            # Pages (routed)
-│   │   ├── Home.tsx
-│   │   ├── About.tsx
-│   │   ├── Projects.tsx
-│   │   ├── ProjectDetail.tsx
-│   │   └── Contact.tsx
-│   ├── hooks/            # Custom hooks
-│   ├── context/          # Context API (dark mode, etc.)
-│   ├── data/             # Données statiques (projets, skills)
-│   ├── App.tsx           # Routing
-│   └── main.tsx          # Entry point
-├── public/               # Assets statiques
-├── tailwind.config.ts    # Config Tailwind
-├── vite.config.ts        # Config Vite
-├── tsconfig.json         # Config TypeScript
-├── package.json          # Dépendances
-└── .github/
-    └── workflows/
-        └── deploy.yml    # GitHub Actions
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-## 🚀 Démarrage rapide
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```bash
-# Cloner le repo
-git clone https://github.com/[TON_USERNAME]/portfolio-react.git
-cd portfolio-react
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-# Installer les dépendances
-npm install
-
-# Démarrer le serveur de dev
-npm run dev
-
-# Build pour production
-npm run build
-
-# Preview production
-npm run preview
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-## 📖 Plan de développement
-
-Voir [REFACTOR_PLAN.md](REFACTOR_PLAN.md) pour le plan détaillé en ~22 étapes.
-
-**Phases:**
-
-1. **Phase 0** — Setup (Vite, React, TypeScript, GitHub Actions)
-2. **Phase 1** — Structure de base (Layout, Navbar, Footer, Routing)
-3. **Phase 2** — Design System (Colors, Components, Dark mode)
-4. **Phase 3** — Pages (Accueil, À propos, Projets, Détails, Contact)
-5. **Phase 4** — Polish (Animations, Scroll effects, Easter eggs)
-6. **Phase 5** — Production (SEO, Performance, A11y, Deploy)
-
-## 🎯 Prochaines étapes
-
-- [ ] **Phase 0.1** — Initialiser Vite + React + TypeScript
-- [ ] **Phase 0.2** — Configurer Tailwind CSS
-- [ ] **Phase 0.3** — Nettoyer le boilerplate
-- [ ] **Phase 0.4** — Setup GitHub Actions
-
-## 📝 Notes
-
-- Ce projet est une **expérience d'apprentissage**. Le code sera progressivement amélioré et optimisé.
-- Chaque étape inclut des concepts à apprendre et des défis à relever.
-- Les contributions sont bienvenues ! 🎉
-
-## 📧 Contact
-
-Pour toute question sur ce projet ou mon parcours, consultez la page Contact du portfolio.
-
----
-
-**Status**: 🔧 En cours de refactorisation  
-**Last updated**: Février 2026
